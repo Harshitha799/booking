@@ -24,7 +24,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table
-public class Passenger9 
+public class Passenger 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,12 +36,12 @@ public class Passenger9
 	private String lastName;
 	private long phoneNumber;
 	@Email(message = "Enter valid email id")
-    private String email;
+        private String email;
 	private long identityDocNumber;
 	private String identityDocumentName;
 
 	@OneToMany(mappedBy="passengerInfo", cascade=  CascadeType.ALL)
-	private List<Booking9> booking;
+	private List<Booking> booking;
 
 	
 	/******************************************************************
@@ -113,11 +113,11 @@ public class Passenger9
 		this.identityDocumentName = identityDocumentName;
 	}
 
-	public List<Booking9> getBooking() {
+	public List<Booking> getBooking() {
 		return booking;
 	}
 
-	public void setBooking(List<Booking9> booking) {
+	public void setBooking(List<Booking> booking) {
 		this.booking = booking;
 	}
 
@@ -135,8 +135,8 @@ public class Passenger9
 	 * 
 	 ******************************************************/
 	
-	public Passenger9(int passengerId, String username, String firstName, String lastName, long phoneNumber,
-			String email, long identityDocNumber, String identityDocumentName, List<Booking9> booking) {
+	public Passenger(int passengerId, String username, String firstName, String lastName, long phoneNumber,
+			String email, long identityDocNumber, String identityDocumentName, List<Booking> booking) {
 		super();
 		this.passengerId = passengerId;
 		this.username = username;
@@ -157,7 +157,7 @@ public class Passenger9
 	 * 
 	 **********************************/
 	
-	public Passenger9() {
+	public Passenger() {
 		super();
 		
 	}
@@ -172,7 +172,7 @@ public class Passenger9
 	
 	@Override
 	public String toString() {
-		return "Passenger8 [passengerId=" + passengerId + ", username=" + username + ", firstName=" + firstName
+		return "Passenger [passengerId=" + passengerId + ", username=" + username + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", phoneNumber=" + phoneNumber + ", email=" + email
 				+ ", identityDocNumber=" + identityDocNumber + ", identityDocumentName=" + identityDocumentName
 				+ ", booking=" + booking + "]";
