@@ -186,7 +186,7 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking9 [bookingId=" + bookingId + ", username=" + username + ", busNumber=" + busNumber + ", source="
+		return "Booking [bookingId=" + bookingId + ", username=" + username + ", busNumber=" + busNumber + ", source="
 				+ source + ", destination=" + destination + ", numberOfSeats=" + numberOfSeats + ", amountPaid="
 				+ amountPaid + ", datenm=" + datenm + ", passengerInfo=" + passengerInfo + ", userInfo=" + userInfo
 				+ "]";
