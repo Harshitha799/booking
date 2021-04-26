@@ -20,7 +20,7 @@ import com.cg.entity.User9;
  * 
  ******************************************************************/
 
-public class Bookingdto9 
+public class Bookingdto 
 {
 	@NotEmpty(message="username should not be empty")
 	@Length(min = 3, max = 15)
@@ -93,7 +93,7 @@ public class Bookingdto9
 	}
 	
 	
-	public Bookingdto9(@NotEmpty(message = "username should not be empty") @Length(min = 3, max = 15) String username,
+	public Bookingdto(@NotEmpty(message = "username should not be empty") @Length(min = 3, max = 15) String username,
 			String busNumber, String source, String destination, Integer numberOfSeats, Integer amountPaid,
 			LocalDate datenm, @NotEmpty(message = "passengerId can not be empty") Integer passengerId,
 			@NotEmpty(message = "userid can not be empty") Integer userId) {
@@ -110,7 +110,7 @@ public class Bookingdto9
 	}
 	
 	
-	public Bookingdto9() {
+	public Bookingdto() {
 		super();
 	}
 	
