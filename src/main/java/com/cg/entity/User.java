@@ -27,7 +27,7 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table
-public class User9 
+public class User 
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,7 +39,7 @@ public class User9
 	private String password;
 
 	@OneToMany(mappedBy="userInfo", cascade=  CascadeType.ALL)
-	private List<Booking9> bookingobj;
+	private List<Booking> bookingobj;
 
 	
 	/******************************************************************
@@ -71,11 +71,11 @@ public class User9
 		this.password = password;
 	}
 
-	public List<Booking9> getBookingobj() {
+	public List<Booking> getBookingobj() {
 		return bookingobj;
 	}
 
-	public void setBookingobj(List<Booking9> bookingobj) {
+	public void setBookingobj(List<Booking> bookingobj) {
 		this.bookingobj = bookingobj;
 	}
 	
@@ -91,7 +91,7 @@ public class User9
 	 * 
 	 ******************************************************/
 
-	public User9(long userId, String username, String password, List<Booking9> bookingobj) {
+	public User(long userId, String username, String password, List<Booking9> bookingobj) {
 		super();
 		this.userId = userId;
 		this.username = username;
@@ -107,7 +107,7 @@ public class User9
 	 * 
 	 **********************************/
 	
-	public User9() {
+	public User() {
 		super();
 		
 	}
@@ -122,7 +122,7 @@ public class User9
 
 	@Override
 	public String toString() {
-		return "User8 [userId=" + userId + ", username=" + username + ", password=" + password + ", bookingobj="
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", bookingobj="
 				+ bookingobj + "]";
 	}
 	
