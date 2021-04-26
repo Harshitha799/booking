@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.cg.dto.Bookingdto9;
-import com.cg.entity.Booking9;
-import com.cg.entity.FeedBack9;
-import com.cg.entity.Passenger9;
-import com.cg.entity.User9;
+import com.cg.dto.Bookingdto;
+import com.cg.entity.Booking;
+import com.cg.entity.FeedBack;
+import com.cg.entity.Passenger;
+import com.cg.entity.User;
 
 
 /**************************************************************************
@@ -24,65 +24,18 @@ import com.cg.entity.User9;
 @Service
 public interface IBookingService 
 {
-	public long addBooking(Booking9 booking); 
+	public long addBooking(Booking booking); 
 	
 	public void deleteBooking(long bookingId); 
 
-	boolean updateBookingDate(long bookingId, Booking9 booking);
+	boolean updateBookingDate(long bookingId, Booking booking);
 
-	public Booking9 getBookingDetailsById(long bookingId);
+	public Booking getBookingDetailsById(long bookingId);
 
-	public Booking9 getAllBookingsByUsername(String username);
+	public Booking getAllBookingsByUsername(String username);
 	
-	public List<FeedBack9> getFeedBackByBusRoute(String routeName);
-
-	
-	
-	
+	public List<FeedBack> getFeedBackByBusRoute(String routeName);
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	public Passenger9 addPassenger(Passenger9 passenger);
-//
-//	public User9 addUser(User9 user);
-//	
-//	
-//	
-//	public FeedBack9 addFeedback(FeedBack9 feedback);
-//	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 
 }
