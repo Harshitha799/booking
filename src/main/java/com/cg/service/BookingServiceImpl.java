@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cg.dto.Bookingdto9;
-import com.cg.entity.Booking9;
-import com.cg.entity.FeedBack9;
-import com.cg.entity.Passenger9;
-import com.cg.entity.User9;
+import com.cg.dto.Bookingdto;
+import com.cg.entity.Booking;
+import com.cg.entity.FeedBack;
+import com.cg.entity.Passenger;
+import com.cg.entity.User;
 import com.cg.exception.IdNotFoundException;
 import com.cg.exception.InvalidBookingUsernameException;
 import com.cg.exception.InvalidBusRouteNameException;
@@ -53,7 +53,7 @@ public class BookingServiceImpl implements IBookingService
 	 ***********************************************************************************/
 	
 	@Override
-	public long addBooking(Booking9 booking) 
+	public long addBooking(Booking booking) 
 	{
 		bookingRepository.save(booking);
 		return booking.getBookingId();
@@ -94,7 +94,7 @@ public class BookingServiceImpl implements IBookingService
 	 *************************************************************************************/
 
 	@Override
-	public boolean updateBookingDate(long bookingId, Booking9 booking) 
+	public boolean updateBookingDate(long bookingId, Booking booking) 
 	{
 		Booking9 updatebooking = bookingRepository.findById(bookingId).get();
 		
@@ -122,7 +122,7 @@ public class BookingServiceImpl implements IBookingService
 	 **************************************************************************************/
 	
 	@Override
-	public Booking9 getBookingDetailsById(long bookingId) 
+	public Booking getBookingDetailsById(long bookingId) 
 	{
 		if(bookingRepository.existsByBookingId(bookingId)) 
 		{
@@ -143,7 +143,7 @@ public class BookingServiceImpl implements IBookingService
 	 **************************************************************************************/
 	
 	@Override
-	public Booking9 getAllBookingsByUsername(String username){
+	public Booking getAllBookingsByUsername(String username){
 		
 		if(userRepository.existsByUsername(username)) {
 			return bookingRepository.findAllByUsername(username);
@@ -162,7 +162,7 @@ public class BookingServiceImpl implements IBookingService
 	 ******************************************************************************************************/
 	
 	@Override
-	public List<FeedBack9> getFeedBackByBusRoute(String routeName){
+	public List<FeedBack> getFeedBackByBusRoute(String routeName){
 		
 		if(feedbackRepository.existsByRouteName(routeName)) {
 			return bookingRepository.getFeedBackByBusRoute(routeName);
@@ -176,99 +176,5 @@ public class BookingServiceImpl implements IBookingService
 
 	
 	
-	
-	
-
-
-	
-	
-	
-//	@Override
-//	public boolean updateBookingDate(long bookingId, Booking9 booking) {
-//			// TODO Auto-generated method stub
-//		if(bookingRepository.existsById(bookingId)){
-//			bookingRepository.save(booking);
-//			return true;
-//		}
-//		else 
-//		{
-//			throw new IdNotFoundException();
-//		}
-//		
-//	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	@Override
-//	public Booking9 getBookingDetailsById(long bookingId) {
-//		if(bookingRepository.existsById(bookingId))
-//			return bookingRepository.getBookingByBookingId(bookingId);
-//		else
-//			throw new IdNotFoundException();
-//	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-//	@Autowired
-//	IPassengerRepository passengerRepository;
-//	
-//	@Override
-//	public Passenger9 addPassenger(Passenger9 passenger) 
-//	{
-//		return passengerRepository.save(passenger);
-//		
-//
-//		
-//	}
-//	
-//	
-//	
-//	
-////	@Autowired
-////	IUserRepository userRepository;
-////	
-//	@Override
-//	public User9 addUser(User9 user) 
-//	{
-//		return userRepository.save(user);
-//		
-//		
-//	}
-//
-//	
-////	@Autowired
-////	IFeedBackRepository feedbackRepository;
-////	
-//	@Override
-//	public FeedBack9 addFeedback(FeedBack9 feedback) 
-//	{
-//		return feedbackRepository.save(feedback);
-//		
-//		
-//	}
 	
 }
