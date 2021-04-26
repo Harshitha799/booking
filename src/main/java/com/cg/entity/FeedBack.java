@@ -20,8 +20,8 @@ import javax.persistence.Table;
  *********************************************************************/
 
 @Entity
-@Table(name = "feedback9")
-public class FeedBack9 {
+@Table(name = "feedback")
+public class FeedBack {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int feedbackId;
@@ -32,7 +32,7 @@ public class FeedBack9 {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "userId")
-	private User9 user;
+	private User user;
 
 	/******************************************************************
 	 * Description: Getter & Setter functions for the above attributes
@@ -79,11 +79,11 @@ public class FeedBack9 {
 		this.routeName = routeName;
 	}
 
-	public User9 getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(User9 user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
@@ -100,7 +100,7 @@ public class FeedBack9 {
 	 * 
 	 ******************************************************/
 
-	public FeedBack9(int feedbackId, int ratings, String comments, String username, String routeName, User9 user) {
+	public FeedBack(int feedbackId, int ratings, String comments, String username, String routeName, User user) {
 		super();
 		this.feedbackId = feedbackId;
 		this.ratings = ratings;
@@ -117,7 +117,7 @@ public class FeedBack9 {
 	 * 
 	 **********************************/
 
-	public FeedBack9() {
+	public FeedBack() {
 		super();
 	}
 
@@ -130,7 +130,7 @@ public class FeedBack9 {
 
 	@Override
 	public String toString() {
-		return "FeedBack8 [feedbackId=" + feedbackId + ", ratings=" + ratings + ", comments=" + comments + ", username="
+		return "FeedBack [feedbackId=" + feedbackId + ", ratings=" + ratings + ", comments=" + comments + ", username="
 				+ username + ", routeName=" + routeName + ", user=" + user + "]";
 	}
 
