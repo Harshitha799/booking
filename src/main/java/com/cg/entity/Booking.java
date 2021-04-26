@@ -25,7 +25,7 @@ import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Table
-public class Booking9 {
+public class Booking {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@SequenceGenerator(name = "booking_Counter", sequenceName = "booking_Sequence", initialValue = 1)
@@ -42,11 +42,11 @@ public class Booking9 {
 
 	@ManyToOne
 	@JoinColumn(name = "passengerId")
-	private Passenger9 passengerInfo;
+	private Passenger passengerInfo;
 
 	@ManyToOne
 	@JoinColumn(name = "userId")
-	private User9 userInfo;
+	private User userInfo;
 
 	/******************************************************************
 	 * Description: Getter & Setter functions for the above attributes
@@ -117,19 +117,19 @@ public class Booking9 {
 		this.datenm = datenm;
 	}
 
-	public Passenger9 getPassengerInfo() {
+	public Passenger getPassengerInfo() {
 		return passengerInfo;
 	}
 
-	public void setPassengerInfo(Passenger9 passengerInfo) {
+	public void setPassengerInfo(Passenger passengerInfo) {
 		this.passengerInfo = passengerInfo;
 	}
 
-	public User9 getUserInfo() {
+	public User getUserInfo() {
 		return userInfo;
 	}
 
-	public void setUserInfo(User9 userInfo) {
+	public void setUserInfo(User userInfo) {
 		this.userInfo = userInfo;
 	}
 
@@ -149,9 +149,9 @@ public class Booking9 {
 	 * This is a parameterized constructor
 	 * 
 	 ******************************************************/
-	public Booking9(long bookingId, @NotEmpty(message = "username should not be empty") String username,
+	public Booking(long bookingId, @NotEmpty(message = "username should not be empty") String username,
 			String busNumber, String source, String destination, int numberOfSeats, int amountPaid, LocalDate datenm,
-			Passenger9 passengerInfo, User9 userInfo) {
+			Passenger passengerInfo, User userInfo) {
 		super();
 		this.bookingId = bookingId;
 		this.username = username;
@@ -172,7 +172,7 @@ public class Booking9 {
 	 * 
 	 **********************************/
 
-	public Booking9() {
+	public Booking() {
 		super();
 
 	}
