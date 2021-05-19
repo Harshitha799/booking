@@ -98,15 +98,16 @@ public class BookingServiceImpl implements IBookingService
 	{
 		Booking9 updatebooking = bookingRepository.findById(bookingId).get();
 		
-		updatebooking.setDestination(booking.getDestination());
-		updatebooking.setBusNumber(booking.getBusNumber());
-
+		
 		if(updatebooking == null) 
 		{
 			throw new IdNotFoundException("Booking Id was not found");
 		}
 		else
 		{
+			updatebooking.setDestination(booking.getDestination());
+			updatebooking.setBusNumber(booking.getBusNumber());
+
 			bookingRepository.save(updatebooking);
 		}
 		return true;
