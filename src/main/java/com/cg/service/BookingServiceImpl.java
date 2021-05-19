@@ -176,5 +176,41 @@ public class BookingServiceImpl implements IBookingService
 
 	
 	
+	//        @Autowired
+//        IPassengerRepository passengerRepository;
+// 	
+//        @Override	
+//        public Passenger9 addPassenger(Passenger9 passenger)	
+//        {
+//                return passengerRepository.save(passenger);	
+// 	
+//	
+//        }	
+// 	
+// 	
+// 	
+////        @Autowired	
+////        IUserRepository userRepository;	
+//// 	
+//        @Override	
+//        public User9 addUser(User9 user)	
+//        {	
+//                return userRepository.save(user);	
+// 	
+// 	
+//        }	
+//	
+// 	
+////        @Autowired	
+////        IFeedBackRepository feedbackRepository;	
+////	
+//        @Override	
+//        public FeedBack9 addFeedback(FeedBack9 feedback)	
+//        {	
+//                return feedbackRepository.save(feedback);	
+// 	
+//  	
+//        }
+	
 	
 }
