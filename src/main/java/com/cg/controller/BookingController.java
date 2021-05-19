@@ -118,8 +118,8 @@ public class BookingController {
 	 * Description: Updates booking details of an exsisting Id. 
 	 * 
 	 ************************************************************/
-	@PutMapping(value = "/updateBookingDate/{bookingId}")
-	public ResponseEntity<Object> updateBookingDate(@Valid @PathVariable long bookingId, @RequestBody Booking booking, BindingResult bindingResult) {
+	@PutMapping(value = "/updateBookingById/{bookingId}")
+	public ResponseEntity<Object> updateBookingById(@Valid @PathVariable long bookingId, @RequestBody Booking booking, BindingResult bindingResult) {
 
 		if (bindingResult.hasErrors()) {
 			List<FieldError> errors = bindingResult.getFieldErrors();
@@ -210,6 +210,46 @@ public class BookingController {
 
 
 
+	
+	//	@PostMapping(value="/addPassenger")
+//	public ResponseEntity<Object> addPassenger(@RequestBody PassengerDto passengerdto) {
+//
+//		bookingService.addPassenger(passengerdto);
+//		return new ResponseEntity<Object>("Booked successfully", HttpStatus.OK);
+//	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	@PostMapping(value="/addPassenger")
+//	public ResponseEntity<Object> addPassenger(@RequestBody Passenger9 passenger) {
+//
+//		bookingService.addPassenger(passenger);
+//		return new ResponseEntity<Object>("Booked successfully", HttpStatus.OK);
+//	}
+//	
+//	
+//	
+//	@PostMapping(value="/addUser")
+//	public ResponseEntity<Object> addUser(@RequestBody User9 user) {
+//
+//		bookingService.addUser(user);
+//		return new ResponseEntity<Object>("Booked successfully", HttpStatus.OK);
+//	}
+//
+//	
+//	
+//	@PostMapping(value="/addFeedback")
+//	public ResponseEntity<Object> addFeedback(@RequestBody FeedBack9 feedback) {
+//
+//		bookingService.addFeedback(feedback);
+//		return new ResponseEntity<Object>("Booked successfully", HttpStatus.OK);
+//	}
 
 
 }
